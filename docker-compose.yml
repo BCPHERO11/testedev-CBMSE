@@ -21,9 +21,9 @@ services:
     image: postgres:14
     container_name: postgres_db
     environment:
-      POSTGRES_DB: laravel
-      POSTGRES_USER: laravel_user
-      POSTGRES_PASSWORD: laravel_pass
+      POSTGRES_DB: testeCBMSE
+      POSTGRES_USER: testeCBMSE_user
+      POSTGRES_PASSWORD: testeCBMSE_pass
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
