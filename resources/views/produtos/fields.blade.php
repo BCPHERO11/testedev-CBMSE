@@ -25,5 +25,13 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('category_id', 'Category Id:') !!}
-    {!! Form::number('category_id', null, ['class' => 'form-control', 'required']) !!}
+    <?php
+        use App\Models\Categorias;
+        $categorias = Categorias::all();
+    ?>
+    <select name="category_id">
+        @foreach($categorias as $categoria)
+            <option value="{{ $categoria->id }}"> {{ $categoria->nome }} </option>
+        @endforeach 
+    </select>
 </div>
