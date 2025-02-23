@@ -37,7 +37,7 @@
     },
     {
         "name": "preco",
-        "dbType": "decimal",
+        "dbType": "float",
         "htmlType": "number",
         "validations": "required|numeric|numeric",
         "searchable": true,

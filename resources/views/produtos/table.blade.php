@@ -7,18 +7,24 @@
                 <th>Descricao</th>
                 <th>Preco</th>
                 <th>Quantidade</th>
-                <th>Category Id</th>
-                <th colspan="3">Action</th>
+                <th>Categoria</th>
+                <th colspan="3">Ações</th>
             </tr>
             </thead>
             <tbody>
+            <?php
+                use App\Models\Categorias;
+            ?>
             @foreach($produtos as $produtos)
+                <?php
+                     $tec = Categorias::where('id', '=', $produtos->category_id)->pluck('nome');
+                ?>
                 <tr>
                     <td>{{ $produtos->nome }}</td>
                     <td>{{ $produtos->descricao }}</td>
                     <td>{{ $produtos->preco }}</td>
                     <td>{{ $produtos->quantidade }}</td>
-                    <td>{{ $produtos->category_id }}</td>
+                    <td>{{ $tec[0] }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['produtos.destroy', $produtos->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

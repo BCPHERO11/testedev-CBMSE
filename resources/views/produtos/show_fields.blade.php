@@ -24,7 +24,7 @@
 
 <!-- Category Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('category_id', 'Category Id:') !!}
+    {!! Form::label('category_id', 'Categoria:') !!}
     <p>{{ $produtos->category_id }}</p>
 </div>
 

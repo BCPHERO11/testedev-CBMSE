@@ -19,7 +19,7 @@ class Produtos extends Model
     protected $casts = [
         'nome' => 'string',
         'descricao' => 'string',
-        'preco' => 'decimal:2'
+        'preco' => 'float'
     ];
 
     public static array $rules = [

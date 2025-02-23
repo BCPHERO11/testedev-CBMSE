@@ -13,7 +13,8 @@
 <!-- Preco Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('preco', 'Preco:') !!}
-    {!! Form::number('preco', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::number('preco', null, ['class' => 'form-control','step' => '0.01']) !!}
+    <!--<input type="number" name="preco" step="0.01">-->
 </div>
 
 <!-- Quantidade Field -->
@@ -24,14 +25,12 @@
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('category_id', 'Category Id:') !!}
+    {!! Form::label('category_id', 'Categoria:') !!}
+    
     <?php
         use App\Models\Categorias;
-        $categorias = Categorias::all();
+        $categorias = Categorias::pluck('nome', 'id');
     ?>
-    <select name="category_id">
-        @foreach($categorias as $categoria)
-            <option value="{{ $categoria->id }}"> {{ $categoria->nome }} </option>
-        @endforeach 
-    </select>
+
+    {!! Form::select ('category_id', $categorias)!!}
 </div>
