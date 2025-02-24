@@ -43,4 +43,4 @@ Com esses comandos iremos configurar nossos pacotes do php e do node
 ---
 
 ## Acessando a aplicação
-Com o amiente configurado a aplicação deve estar no endereço: [CRUDS](http://localhost:8078)
+Com o amiente configurado a aplicação deve estar no endereço: [CRUDS](http://localhost:8078/home)
