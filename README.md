@@ -18,24 +18,30 @@ A aplicação utiliza docker para facilitar a configuração e execução do pro
 
 2. Subindo os contêineres no docker
     ```bash
-    docker compose up --build
+    docker compose up -d --build
     ```
 
-3. Acessando o contêiner da aplicação:
+3. Verifique se os contêineres estão criados com o comando
+    ```bash
+    docker ps
+    ```
+
+4. Crie uma cópia do arquivo nomeado ".env.example" dentro do próprio diretório e o renomeie para ".env" apenas.
+
+5. Acessando o contêiner da aplicação:
     ```bash
     docker exec -it laravel_app bash 
     ```
 
-4. Dentro do contêiner, é necessário executar os seguites comandos
+6. Dentro do contêiner, é necessário executar os seguites comandos para configurar nossos pacotes do php e do node
     ```bash
     composer install
     php artisan key:generate
     npm install
     npm run build
     ```
-Com esses comandos iremos configurar nossos pacotes do php e do node
     
-5. Para montarmos o banco de dados usamos o comando
+7. Para montarmos o banco de dados usamos o comando
     ```bash
     php artisan migrate
     ```
