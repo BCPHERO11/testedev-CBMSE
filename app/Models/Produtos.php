@@ -34,6 +34,6 @@ class Produtos extends Model
 
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\Category::class, 'category_id');
+        return $this->belongsTo(\App\Models\Categorias::class, 'category_id');
     }
 }

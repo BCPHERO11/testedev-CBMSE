@@ -47,7 +47,7 @@ class ProdutosController extends AppBaseController
 
         $produtos = $this->produtosRepository->create($input);
 
-        Flash::success('Produtos saved successfully.');
+        Flash::success('Produtos salvo com sucesso.');
 
         return redirect(route('produtos.index'));
     }
@@ -60,7 +60,7 @@ class ProdutosController extends AppBaseController
         $produtos = $this->produtosRepository->find($id);
 
         if (empty($produtos)) {
-            Flash::error('Produtos not found');
+            Flash::error('Produtos não encontrado');
 
             return redirect(route('produtos.index'));
         }
@@ -76,7 +76,7 @@ class ProdutosController extends AppBaseController
         $produtos = $this->produtosRepository->find($id);
 
         if (empty($produtos)) {
-            Flash::error('Produtos not found');
+            Flash::error('Produtos não encontrado');
 
             return redirect(route('produtos.index'));
         }
@@ -92,14 +92,14 @@ class ProdutosController extends AppBaseController
         $produtos = $this->produtosRepository->find($id);
 
         if (empty($produtos)) {
-            Flash::error('Produtos not found');
+            Flash::error('Produtos não encontrado');
 
             return redirect(route('produtos.index'));
         }
 
         $produtos = $this->produtosRepository->update($request->all(), $id);
 
-        Flash::success('Produtos updated successfully.');
+        Flash::success('Produtos atualizado com sucesso.');
 
         return redirect(route('produtos.index'));
     }
@@ -114,14 +114,14 @@ class ProdutosController extends AppBaseController
         $produtos = $this->produtosRepository->find($id);
 
         if (empty($produtos)) {
-            Flash::error('Produtos not found');
+            Flash::error('Produtos não encontrado');
 
             return redirect(route('produtos.index'));
         }
 
         $this->produtosRepository->delete($id);
 
-        Flash::success('Produtos deleted successfully.');
+        Flash::success('Produtos deletado com sucesso.');
 
         return redirect(route('produtos.index'));
     }
