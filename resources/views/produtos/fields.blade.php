@@ -6,21 +6,21 @@
 
 <!-- Descricao Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('descricao', 'Descricao:') !!}
+    {!! Form::label('descricao', 'Descrição:') !!}
     {!! Form::textarea('descricao', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Preco Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('preco', 'Preco:') !!}
-    {!! Form::number('preco', null, ['class' => 'form-control','step' => '0.01']) !!}
+    {!! Form::label('preco', 'Preço:') !!}
+    {!! Form::number('preco', null, ['class' => 'form-control','step' => '0.01', 'min' => '0.01']) !!}
     <!--<input type="number" name="preco" step="0.01">-->
 </div>
 
 <!-- Quantidade Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('quantidade', 'Quantidade:') !!}
-    {!! Form::number('quantidade', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::number('quantidade', null, ['class' => 'form-control', 'required', 'min' => '0']) !!}
 </div>
 
 <!-- Category Id Field -->

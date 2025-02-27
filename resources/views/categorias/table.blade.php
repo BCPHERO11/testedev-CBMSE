@@ -9,18 +9,18 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($categorias as $categorias)
+            @foreach($categorias as $categoria)
                 <tr>
-                    <td>{{ $categorias->nome }}</td>
-                    <td>{{ $categorias->descricao }}</td>
+                    <td>{{ $categoria->nome }}</td>
+                    <td>{{ $categoria->descricao }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['categorias.destroy', $categorias->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['categorias.destroy', $categoria->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('categorias.show', [$categorias->id]) }}"
+                            <a href="{{ route('categorias.show', [$categoria->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('categorias.edit', [$categorias->id]) }}"
+                            <a href="{{ route('categorias.edit', [$categoria->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>
@@ -36,6 +36,7 @@
 
     <div class="card-footer clearfix">
         <div class="float-right">
+            @include('adminlte-templates::common.paginate', ['records' => $categorias])
         </div>
     </div>
 </div>
