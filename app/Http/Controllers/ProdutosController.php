@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProdutosRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\ProdutosRepository;
 use Illuminate\Http\Request;
+use App\Models\Categorias;
 use Flash;
 
 class ProdutosController extends AppBaseController
@@ -35,7 +36,9 @@ class ProdutosController extends AppBaseController
      */
     public function create()
     {
-        return view('produtos.create');
+        $categorias = Categorias::pluck('nome', 'id');
+
+        return view('produtos.create', compact('categorias'));
     }
 
     /**
@@ -44,6 +47,10 @@ class ProdutosController extends AppBaseController
     public function store(CreateProdutosRequest $request)
     {
         $input = $request->all();
+
+        $valido = $input->validated([
+            
+        ]);
 
         $produtos = $this->produtosRepository->create($input);
 

@@ -26,11 +26,5 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('category_id', 'Categoria:') !!}
-    
-    <?php
-        use App\Models\Categorias;
-        $categorias = Categorias::pluck('nome', 'id');
-    ?>
-
-    {!! Form::select ('category_id', $categorias)!!}
+    {!! Form::select ('category_id', $categorias ) !!}
 </div>
