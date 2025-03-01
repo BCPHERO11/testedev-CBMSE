@@ -48,10 +48,6 @@ class ProdutosController extends AppBaseController
     {
         $input = $request->all();
 
-        $valido = $input->validated([
-            
-        ]);
-
         $produtos = $this->produtosRepository->create($input);
 
         Flash::success('Produtos salvo com sucesso.');
